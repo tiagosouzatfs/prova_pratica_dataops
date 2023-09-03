@@ -12,13 +12,13 @@ Qual o seu nível de domínio nas técnicas/ferramentas listadas abaixo, onde:
 * 6 - domina a técnica e já desenvolveu vários projetos utilizando-a.
 
 **Tópicos de Conhecimento:**
-* Manipulação e tratamento de dados com Python: 6
-* Manipulação e tratamento de dados com Pyspark: 3
-* Desenvolvimento de data workflows em Ambiente Azure com databricks: 0
-* Desenvolvimento de data workflows com Airflow: 4
-* Manipulação de bases de dados NoSQL: 4
-* Web crawling e web scraping para mineração de dados: 3
-* Construção de APIs: REST, SOAP e Microservices: 3
+* Manipulação e tratamento de dados com Python: **6**
+* Manipulação e tratamento de dados com Pyspark: **3**
+* Desenvolvimento de data workflows em Ambiente Azure com databricks: **0**
+* Desenvolvimento de data workflows com Airflow: **4**
+* Manipulação de bases de dados NoSQL: **3**
+* Web crawling e web scraping para mineração de dados: **4**
+* Construção de APIs: REST, SOAP e Microservices: **3**
 
 ##### 2) Desenvolvimento de pipelines de ETL de dados com Python, Apache Airflow, Hadoop e Spark.
 
@@ -34,24 +34,60 @@ podendo ser uma opção analisar estruturadamente desde que se tenha tempo, por�
 volumes de dados, na maioria das vezes  não estruturados, e também, em virtude de sua escalabilidade, e que para este caso 
 estas características parecem ser essenciais.
 
-b) **Requerimentos para utilização do script**
-'pip install wget openpyxl'
-link da pasta 2b
+b) [Diretório da tarefa 2b](https://google.com.br)
+##### Requerimentos para utilização do script
+* `pip install wget openpyxl`
 
-c) **Requerimentos para utilização do script**
-* Docker-compose instalado na máquina;
-* Entrar no diretório do script docker-compose e executar o comando: **docker-compose up -d**
-link da pasta 2c
-
+c) [Diretório da tarefa 2c](https://google.com.br)
+##### Requerimentos para utilização do script
+* Docker e Docker-compose instalados na máquina
+* Entrar no diretório do script docker-compose e executar o comando: `docker-compose up -d`
+* Será inicializado um container Docker do banco de dados MySQL Server 2019, e o acesso se dará ao banco da forma que quiser, podendo ser via alguma ferramenta visual de conexão com o banco de dados como o HeideSQL ou o SQL Server Management Studio, como também por linha de comando, através do binário sqlcmd. A ideia é que se utilize os datasets em **.csv** ou **.xlsx** gerados no passo anterior e importemos eles no SQL Server, como tabelas, após criarmos o banco.
+* Para esta atividade foi utilizada a ferramenta SQL Server Management Studio, porém também podemos utilizar a linha de comando para isso, seguindo o ninário do sqlcmd e para acessá-lo, faça conforme os passos abaixo:
+  * `docker exec -it -u root sql_server bash`
+  * `cd /opt/mssql-tools/bin/`
+  * `./sqlcmd -S localhost -U SA -P 'Sqlserver!P4ssw0rd'`
+##### Query desenvolvida
+'Código da query aqui'
 
 ##### 3) Criação de ambiente de desenvolvimento com Linux e Docker.
-link
+[Diretório da tarefa 3](https://google.com.br)
+##### Requerimentos para utilização do script
+* O arquivo python com o desenvolvimento da DAG com as tasks já se encontra no diretório **/dags** desta tarefa
+* Docker e Docker-compose instalados na máquina
+* `pip install "apache-airflow[celery]==2.7.0" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.7.0/constraints-3.8.txt"`
+* `docker-compose up airflow-init`
+* `docker-compose up`
+* Como este script python necessita de bibliotecas externas, então:
+  * `docker exec -it -u root task3_airflow-scheduler_1 bash`
+  * `apt update`
+  * `exit`
+  * `docker exec -it task3_airflow-scheduler_1 bash`
+  * `pip install wget openpyxl`
+  * `exit`
 
 ##### 4) Configuração de pipelines de CI/CD com Gitlab ou Github.
 **Não Feita**
 
 ##### 5) Implantação de aplicações com Kubernetes.
-link
+[Diretório da tarefa 5](https://google.com.br)
+**Para as opções de infraestrutura local, foram desenvolvidas 3 opções:**
+  * Solução containeriza com docker-compose de 3 conainers com a flag privileged para rodar docker dind, baseada em rancher
+  * Solução virtualizada com vagrant, 3 servidores com o box do ubuntu server 20.04, baseada em k3s
+  * Solução virtualizada com minikube (microframework k8s), 3 nodes adicionados já no cluster (solução utilizada para esse exercício)
+##### Requerimentos para utilização do script
+* O arquivo python com o desenvolvimento da DAG com as tasks já se encontra no diretório **/dags** desta tarefa
+* Docker e Docker-compose instalados na máquina
+* Terminal 1: iniciar o script dentro do diretório da tarefa: `./create_environment.sh`
+* [Link do script para automação](https://google.com.br)
+  * Ao finalizar o script acima, utilizar os comandos abaixo, 1 para cada terminal, pois esses comandos ocupam um terminal por comando
+  * Terminal 2: `minikube mount ./dags/:/data/dags`
+  * Terminal 3: `minikube mount ./data/:/data/data`
+  * Terminal 4: `minikube mount ./logs/:/data/logs`
+* [Link dos comandos executados](https://google.com.br)
+* Terminal 5: acessar o dashboard do minikube para ver o que foi criado, pods, deployments, namespaces, persistent volumes, persistent volumes clain
+*   * `minikube dashboard`
+* Se tudo ocorreu bem, acessar a página do airflow, em: ***localhost:8080**
 
 ##### 6) Implantação de Data Lake com Hadoop.
-link
+* link da pasta 6
