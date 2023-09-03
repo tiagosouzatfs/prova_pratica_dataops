@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  master_node:
+    image: rancher/rancher:v2.7-head
+    container_name: k8s_master
+    hostname: k8s_master
+    privileged: true
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+      net_kubernetes:
+        ipv4_address: 192.168.1.2
+    ports:
+      - "80:80"
+      - "443:443"
+
+  worker_node1:
+    image: ubuntu:20.04
+    container_name: k8s_worker1
+    hostname: k8s_worker1
+    privileged: true
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+      net_kubernetes:
+        ipv4_address: 192.168.1.3
+    depends_on:
+      - master_node
+
+  worker_node2:
+    image: ubuntu:20.04
+    container_name: k8s_worker1
+    hostname: k8s_worker1
+    privileged: true
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+      net_kubernetes:
+        ipv4_address: 192.168.1.4
+    depends_on:
+      - master_node
+      - worker_node1
+
+networks:
+  net_kubernetes:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
+          gateway: 192.168.1.1
