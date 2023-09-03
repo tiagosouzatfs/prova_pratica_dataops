@@ -1,0 +1,3 @@
+SELECT COUNT(Município) AS Numero_Atracacoes, Município AS Localidade_Município, UF AS Localidade_UF, [Região Geográfica], DATEDIFF(HOUR, CONVERT(datetime, [Data Chegada], 105), CONVERT(datetime, [Data Atracação], 105)) AS Tempo_Espera_Horas, 
+DATEDIFF(HOUR, CONVERT(datetime, [Data Atracação], 105), CONVERT(datetime, [Data Desatracação], 105)) AS Tempo_Atracado_Horas, Mes, Ano 
+FROM [dbo].[atracacao_fato$] WHERE UF = 'Ceará' AND (Ano = 2018 OR Ano = 2019) GROUP BY Município, UF, [Região Geográfica], [Data Chegada], [Data Atracação], [Data Desatracação], Mes, Ano ORDER BY Mes, Ano;
