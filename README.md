@@ -1,6 +1,6 @@
 # Prova prática Engenheiro de Dados com foco em DevOps
 
-### Repositório destinado aos itens da prova de engenheiro de dados com foco em devops
+### Repositório destinado aos itens da prova de Engenheiro de Dados com foco em Devops
 
 ##### 1) Auto Avaliação 
 Auto-avalie suas habilidades nos requisitos de acordo com os níveis especificados usando o
