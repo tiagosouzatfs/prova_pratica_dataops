@@ -34,11 +34,11 @@ podendo ser uma opção analisar estruturadamente desde que se tenha tempo, por�
 volumes de dados, na maioria das vezes  não estruturados, e também, em virtude de sua escalabilidade, e que para este caso 
 estas características parecem ser essenciais.
 
-b) [Diretório da tarefa 2b](https://google.com.br)
+b) [Diretório da tarefa 2b](https://github.com/tiagosouzatfs/prova_pratica_dataops/tree/main/task2/item_b)
 ##### Requerimentos para utilização do script
 * `pip install wget openpyxl`
 
-c) [Diretório da tarefa 2c](https://google.com.br)
+c) [Diretório da tarefa 2c](https://github.com/tiagosouzatfs/prova_pratica_dataops/tree/main/task2/item_c)
 ##### Requerimentos para utilização do script
 * Docker e Docker-compose instalados na máquina
 * Entrar no diretório do script docker-compose e executar o comando: `docker-compose up -d`
@@ -52,7 +52,7 @@ c) [Diretório da tarefa 2c](https://google.com.br)
 * SELECT COUNT(Município) AS Numero_Atracacoes, Município AS Localidade_Município, UF AS Localidade_UF, [Região Geográfica], DATEDIFF(HOUR, CONVERT(datetime, [Data Chegada], 105), CONVERT(datetime, [Data Atracação], 105)) AS Tempo_Espera_Horas, DATEDIFF(HOUR, CONVERT(datetime, [Data Atracação], 105), CONVERT(datetime, [Data Desatracação], 105)) AS Tempo_Atracado_Horas, Mes, Ano FROM [dbo].[atracacao_fato$] WHERE UF = 'Ceará' AND (Ano = 2018 OR Ano = 2019) GROUP BY Município, UF, [Região Geográfica], [Data Chegada], [Data Atracação], [Data Desatracação], Mes, Ano ORDER BY Mes, Ano;
 
 ##### 3) Criação de ambiente de desenvolvimento com Linux e Docker.
-[Diretório da tarefa 3](https://google.com.br)
+[Diretório da tarefa 3](https://github.com/tiagosouzatfs/prova_pratica_dataops/tree/main/task3)
 ##### Requerimentos para utilização do script
 * O arquivo python com o desenvolvimento da DAG com as tasks já se encontra no diretório **/dags** desta tarefa
 * Docker e Docker-compose instalados na máquina
@@ -71,7 +71,7 @@ c) [Diretório da tarefa 2c](https://google.com.br)
 **Não Feita**
 
 ##### 5) Implantação de aplicações com Kubernetes.
-[Diretório da tarefa 5](https://google.com.br)
+[Diretório da tarefa 5](https://github.com/tiagosouzatfs/prova_pratica_dataops/tree/main/task5)
 **Para as opções de infraestrutura local, foram desenvolvidas 3 opções:**
   * Solução containeriza com docker-compose de 3 conainers com a flag privileged para rodar docker dind, baseada em rancher
   * Solução virtualizada com vagrant, 3 servidores com o box do ubuntu server 20.04, baseada em k3s
@@ -79,13 +79,13 @@ c) [Diretório da tarefa 2c](https://google.com.br)
 ##### Requerimentos para utilização do script
 * O arquivo python com o desenvolvimento da DAG com as tasks já se encontra no diretório **/dags** desta tarefa
 * Docker e Docker-compose instalados na máquina
+* [Link dos comandos executados com testes](https://google.com.br)
 * Terminal 1: iniciar o script dentro do diretório da tarefa: `./create_environment.sh`
 * [Link do script para automação](https://google.com.br)
   * Ao finalizar o script acima, utilizar os comandos abaixo, 1 para cada terminal, pois esses comandos ocupam um terminal por comando
   * Terminal 2: `minikube mount ./dags/:/data/dags`
   * Terminal 3: `minikube mount ./data/:/data/data`
   * Terminal 4: `minikube mount ./logs/:/data/logs`
-* [Link dos comandos executados](https://google.com.br)
 * Terminal 5: acessar o dashboard do minikube para ver o que foi criado, pods, deployments, namespaces, persistent volumes, persistent volumes clain
   * `minikube dashboard`
   * O comando acima irá gerar um link para **127.0.0.1** para acesso web ao minikube
