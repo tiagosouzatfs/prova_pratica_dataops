@@ -86,8 +86,8 @@ c) [Diretório da tarefa 2c](https://google.com.br)
   * Terminal 4: `minikube mount ./logs/:/data/logs`
 * [Link dos comandos executados](https://google.com.br)
 * Terminal 5: acessar o dashboard do minikube para ver o que foi criado, pods, deployments, namespaces, persistent volumes, persistent volumes clain
-*   * `minikube dashboard`
-* Se tudo ocorreu bem, acessar a página do airflow, em: ***localhost:8080**
+ * `minikube dashboard`
+* Se tudo ocorreu bem, acessar a página do airflow, em: **localhost:8080**
 
 ##### 6) Implantação de Data Lake com Hadoop.
 * link da pasta 6
