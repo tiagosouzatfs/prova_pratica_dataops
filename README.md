@@ -48,7 +48,7 @@ c) [Diretório da tarefa 2c](https://github.com/tiagosouzatfs/prova_pratica_data
   * `cd /opt/mssql-tools/bin/`
   * `./sqlcmd -S localhost -U SA -P 'Sqlserver!P4ssw0rd'`
 ##### Query desenvolvida
-* [Link da query](https://google.com.br)
+* [Link da query](https://github.com/tiagosouzatfs/prova_pratica_dataops/blob/main/task2/item_c/query_dataops.sql)
 * SELECT COUNT(Município) AS Numero_Atracacoes, Município AS Localidade_Município, UF AS Localidade_UF, [Região Geográfica], DATEDIFF(HOUR, CONVERT(datetime, [Data Chegada], 105), CONVERT(datetime, [Data Atracação], 105)) AS Tempo_Espera_Horas, DATEDIFF(HOUR, CONVERT(datetime, [Data Atracação], 105), CONVERT(datetime, [Data Desatracação], 105)) AS Tempo_Atracado_Horas, Mes, Ano FROM [dbo].[atracacao_fato$] WHERE UF = 'Ceará' AND (Ano = 2018 OR Ano = 2019) GROUP BY Município, UF, [Região Geográfica], [Data Chegada], [Data Atracação], [Data Desatracação], Mes, Ano ORDER BY Mes, Ano;
 
 ##### 3) Criação de ambiente de desenvolvimento com Linux e Docker.
@@ -79,9 +79,9 @@ c) [Diretório da tarefa 2c](https://github.com/tiagosouzatfs/prova_pratica_data
 ##### Requerimentos para utilização do script
 * O arquivo python com o desenvolvimento da DAG com as tasks já se encontra no diretório **/dags** desta tarefa
 * Docker e Docker-compose instalados na máquina
-* [Link dos comandos executados com testes](https://google.com.br)
+* [Link dos comandos executados com testes](https://github.com/tiagosouzatfs/prova_pratica_dataops/blob/main/task5/comandos_utilizados.txt)
 * Terminal 1: iniciar o script dentro do diretório da tarefa: `./create_environment.sh`
-* [Link do script para automação](https://google.com.br)
+* [Link do script para automação](https://github.com/tiagosouzatfs/prova_pratica_dataops/blob/main/task5/create_environment.sh)
   * Ao finalizar o script acima, utilizar os comandos abaixo, 1 para cada terminal, pois esses comandos ocupam um terminal por comando
   * Terminal 2: `minikube mount ./dags/:/data/dags`
   * Terminal 3: `minikube mount ./data/:/data/data`
