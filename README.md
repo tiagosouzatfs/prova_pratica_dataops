@@ -34,9 +34,15 @@ podendo ser uma opção analisar estruturadamente desde que se tenha tempo, por�
 volumes de dados, na maioria das vezes  não estruturados, e também, em virtude de sua escalabilidade, e que para este caso 
 estas características parecem ser essenciais.
 
-b) link
+b) **Requerimentos para utilização do script**
+'pip install wget openpyxl'
+link da pasta 2b
 
-c) link
+c) **Requerimentos para utilização do script**
+* Docker-compose instalado na máquina;
+* Entrar no diretório do script docker-compose e executar o comando: **docker-compose up -d**
+link da pasta 2c
+
 
 ##### 3) Criação de ambiente de desenvolvimento com Linux e Docker.
 link
