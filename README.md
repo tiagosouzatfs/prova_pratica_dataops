@@ -49,7 +49,7 @@ c) [Diretório da tarefa 2c](https://google.com.br)
   * `./sqlcmd -S localhost -U SA -P 'Sqlserver!P4ssw0rd'`
 ##### Query desenvolvida
 * [Link da query](https://google.com.br)
-* 'SELECT COUNT(Município) AS Numero_Atracacoes, Município AS Localidade_Município, UF AS Localidade_UF, [Região Geográfica], DATEDIFF(HOUR, CONVERT(datetime, [Data Chegada], 105), CONVERT(datetime, [Data Atracação], 105)) AS Tempo_Espera_Horas, DATEDIFF(HOUR, CONVERT(datetime, [Data Atracação], 105), CONVERT(datetime, [Data Desatracação], 105)) AS Tempo_Atracado_Horas, Mes, Ano FROM [dbo].[atracacao_fato$] WHERE UF = 'Ceará' AND (Ano = 2018 OR Ano = 2019) GROUP BY Município, UF, [Região Geográfica], [Data Chegada], [Data Atracação], [Data Desatracação], Mes, Ano ORDER BY Mes, Ano;'
+* SELECT COUNT(Município) AS Numero_Atracacoes, Município AS Localidade_Município, UF AS Localidade_UF, [Região Geográfica], DATEDIFF(HOUR, CONVERT(datetime, [Data Chegada], 105), CONVERT(datetime, [Data Atracação], 105)) AS Tempo_Espera_Horas, DATEDIFF(HOUR, CONVERT(datetime, [Data Atracação], 105), CONVERT(datetime, [Data Desatracação], 105)) AS Tempo_Atracado_Horas, Mes, Ano FROM [dbo].[atracacao_fato$] WHERE UF = 'Ceará' AND (Ano = 2018 OR Ano = 2019) GROUP BY Município, UF, [Região Geográfica], [Data Chegada], [Data Atracação], [Data Desatracação], Mes, Ano ORDER BY Mes, Ano;
 
 ##### 3) Criação de ambiente de desenvolvimento com Linux e Docker.
 [Diretório da tarefa 3](https://google.com.br)
