@@ -92,5 +92,5 @@ c) [Diretório da tarefa 2c](https://github.com/tiagosouzatfs/prova_pratica_data
 * Se tudo ocorreu bem, acessar a página do airflow, em: **localhost:8080**
 
 ##### 6) Implantação de Data Lake com Hadoop.
-[Diretório da tarefa 5](https://github.com/tiagosouzatfs/prova_pratica_dataops/tree/main/task6)
+[Diretório da tarefa 6](https://github.com/tiagosouzatfs/prova_pratica_dataops/tree/main/task6)
 *  ![Cluster Hadoop](task6/cluster_hadoop.png)
